@@ -1,0 +1,32 @@
+#include<queue>
+#include<iostream>
+#include<vector>
+using namespace std;
+class mycomparator
+{
+public:
+int operator () (int a,int b)
+{
+return a<b;
+}
+};
+
+int main ()
+{
+mycomparator cmp;
+priority_queue<int,vector <int>,mycomparator>g (cmp);
+g.push(10);
+g.push(20);
+g.push(30);
+g.push(410);
+g.push(50);
+cout<<g.top()<<endl;
+cout<<g.size()<<endl;
+cout<<"***********"<<endl;
+while(!g.empty())
+{
+cout<<g.top()<<endl;
+g.pop();
+}
+return 0;
+}
